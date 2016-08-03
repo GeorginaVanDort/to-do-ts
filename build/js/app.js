@@ -4,7 +4,7 @@ var apiKey = "AIzaSyDTxxSTai-Jb7jEh6w4_euhPozoiFTh89M";
 },{}],2:[function(require,module,exports){
 var apiKey = require("./../.env").apiKey;
 
-var markers = [];
+
 var map;
 function initMap() {
   var myLatLng = {lat: 37.0902, lng: -95.7129};
@@ -13,30 +13,18 @@ function initMap() {
     zoom: 5
   });
 
-  function setMapOnAll(map) {
-    for (var i = 0; i < markers.length; i++) {
-      markers[i].setMap(map);
-    }
-  }
-
-  function clearMarkers() {
-    setMapOnAll(null);
-  }
-
-  function deleteMarkers() {
-    clearMarkers();
-    markers = [];
-  }
-
-  map.addListener('click', function(event) {
-
-    var marker = new google.maps.Marker({position: event.latLng, map: map});
-    markers.push(marker);
-    console.log(markers);
+map.addListener('click', function(event) {
+  marker = new google.maps.Marker({position: event.latLng, map: map});
+  markerLat = marker.position.lat();
+  markerLon = marker.position.lng();
+  getConcerts(markerLat, markerLon);
+});
+}
+function getConcerts(thisLat, thisLon){
+  $.get('http://api.bandsintown.com/events/search?location=' + thisLat + ',' + thisLon + '&radius=10&format=json&app_id=EpicodusStudentProject', function(info){
+    console.log(info[0].artists[0].name);
+    console.log(info);
   });
-
-
-
 }
 
 
