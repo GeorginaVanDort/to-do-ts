@@ -6,3 +6,8 @@ html, body {
 #map {
   height: 60vh;
 }
+
+#bandName {
+  display: flex;
+  flex-direction: column;
+}
