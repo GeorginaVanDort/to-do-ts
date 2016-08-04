@@ -16,12 +16,18 @@ function initMap() {
     marker = new google.maps.Marker({position: event.latLng, map: map});
     markerLat = marker.position.lat();
     markerLon = marker.position.lng();
+    console.log(marker);
     getConcerts(markerLat, markerLon);
     $('#bandName').text(''),
+    $('#bandName').append('<h2>'+'Artists'+'</h2>'),
     $('#venue').text(''),
+    $('#venue').append('<h2>'+'Venue'+'</h2>'),
     $('#date').text(''),
+    $('#date').append('<h2>'+'Time'+'</h2>'),
     $('#ticket_status').text(''),
-    $('#ticket_link').text('');
+    $('#ticket_status').append('<h2>'+'Tickets'+'</h2>'),
+    $('#ticket_link').text(''),
+    $('#ticket_link').append('<h2>'+'Buy'+'</h2>');
   });
 }
 
@@ -31,12 +37,11 @@ function getConcerts(thisLat, thisLon){
  function(info){
    if (info[0]) {
      for(var i=0; i<info.length; i++)
-       $("#bandName").append("<p><a href='" + info[i].artists[0].url + "' target="+'_blank'+">"+info[i].artists[0].name +"</a><p>"),
-
-       $('#venue').append('<p>' + info[i].venue.name + '</p>'),
-       $('#date').append('<p>' + info[i].datetime + '</p>'),
-       $('#ticket_status').append('<p>' + info[i].ticket_status + '</p>'),
-       $('#ticket_link').append("<p><a href='" + info[i].ticket_url + "' target="+'_blank'+">Buy Tickets</a><p>");
+      $("#bandName").append('<p>'+"<a href='" + info[i].artists[0].url + "'    target="+'_blank'+">"+info[i].artists[0].name +"</a>"+'</p>'),
+      $('#venue').append('<p>' + info[i].venue.name + '</p>'),
+      $('#date').append('<p>' + info[i].datetime + '</p>'),
+      $('#ticket_status').append('<p>' + info[i].ticket_status + '</p>'),
+      $('#ticket_link').append("<a href='" + info[i].ticket_url + "' target="+'_blank'+"><i class='fa fa-ticket fa-1x' aria-hidden='true'></i></a>");
        console.log(info);
    } else {
      $('#bandName').text('Sorry, no bands are playin in this area.');

@@ -7,7 +7,6 @@ body {
 header {
   height: 15rem;
   width: 100vw;
-  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,13 +23,32 @@ header {
   }
 }
 
-
 #musicEvents {
   display: flex;
   justify-content: space-between;
-  width: 90vw;
+  width: 105rem;
 }
 
 a{
   display: block;
+}
+
+#bandName {
+  width: 40rem;
+}
+
+#venue {
+  width: 33rem;
+}
+
+#date {
+  width: 14rem;
+}
+
+#ticket_status {
+  width: 10rem;
+}
+
+#ticket_link {
+  width: 0rem;
 }
