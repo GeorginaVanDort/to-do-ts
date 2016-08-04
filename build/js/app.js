@@ -22,6 +22,8 @@ function initMap() {
     $('#bandName').append('<h2>'+'Artists'+'</h2>'),
     $('#venue').text(''),
     $('#venue').append('<h2>'+'Venue'+'</h2>'),
+    $('#city').text(''),
+    $('#city').append('<h2>'+'City'+'</h2>'),
     $('#date').text(''),
     $('#date').append('<h2>'+'Time'+'</h2>'),
     $('#ticket_status').text(''),
@@ -39,6 +41,7 @@ function getConcerts(thisLat, thisLon){
      for(var i=0; i<info.length; i++)
       $("#bandName").append('<p>'+"<a href='" + info[i].artists[0].url + "'    target="+'_blank'+">"+info[i].artists[0].name +"</a>"+'</p>'),
       $('#venue').append('<p>' + info[i].venue.name + '</p>'),
+      $('#city').append('<p>' + info[i].venue.city + '</p>'),
       $('#date').append('<p>' + info[i].datetime + '</p>'),
       $('#ticket_status').append('<p>' + info[i].ticket_status + '</p>'),
       $('#ticket_link').append("<a href='" + info[i].ticket_url + "' target="+'_blank'+"><i class='fa fa-ticket fa-1x' aria-hidden='true'></i></a>");

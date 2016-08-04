@@ -33,4 +33,7 @@ header {
   #ticket_link a {
     height: 3rem;
   }
+  #bandName, #venue, #city, #date, #ticket_status {
+    background-color: $almostBlack;
+  }
 }

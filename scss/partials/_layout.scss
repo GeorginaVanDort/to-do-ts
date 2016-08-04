@@ -27,6 +27,7 @@ header {
   display: flex;
   justify-content: space-between;
   width: 105rem;
+  white-space: nowrap;
 }
 
 a{
@@ -34,11 +35,15 @@ a{
 }
 
 #bandName {
-  width: 40rem;
+  width: 17rem;
 }
 
 #venue {
-  width: 33rem;
+  width: 20rem;
+}
+
+#city {
+  max-width: 9rem;
 }
 
 #date {
