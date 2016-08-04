@@ -22,7 +22,7 @@ map.addListener('click', function(event) {
 }
 function getConcerts(thisLat, thisLon){
   $.get('http://api.bandsintown.com/events/search?location=' + thisLat + ',' + thisLon + '&radius=10&format=json&app_id=EpicodusStudentProject', function(info){
-    $("#bandName").append('<p>'+info[0].artists[0].name+'</p>');
+    $("#bandName").append('<p>'+info[0].artists[0].name + '</p>');
     console.log(info[0].artists[0].name);
     console.log(info);
   });
