@@ -19,7 +19,7 @@ function initMap() {
     console.log(marker);
     getConcerts(markerLat, markerLon);
     $('#bandName').text(''),
-    $('#bandName').append('<h2>'+'Artists'+'</h2>'),
+    $('#bandName').append('<h2>'+'Events'+'</h2>'),
     $('#venue').text(''),
     $('#venue').append('<h2>'+'Venue'+'</h2>'),
     $('#city').text(''),
