@@ -27,11 +27,12 @@ function getConcerts(thisLat, thisLon){
  function(info){
    if (info[0]) {
      for(var i=0; i<info.length; i++)
-       $("#bandName").append('<p>'+info[i].artists[0].name +'</p>'),
+       $("#bandName").append("<p><a href='" + info[i].artists[0].url + "' target="+'_blank'+">"+info[i].artists[0].name +"</a><p>"),
+
        $('#venue').append('<p>' + info[i].venue.name + '</p>'),
        $('#date').append('<p>' + info[i].datetime + '</p>'),
        $('#ticket_status').append('<p>' + info[i].ticket_status + '</p>'),
-       $('#ticket_link').append("<p><a href='" + info[i].ticket_url + "'><button>Buy Tickets</button></a><p>");
+       $('#ticket_link').append("<p><a href='" + info[i].ticket_url + "' target="+'_blank'+">Buy Tickets</a><p>");
        console.log(info);
    } else {
      $('#bandName').text('Sorry, no bands are playin in this area.');
