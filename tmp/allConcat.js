@@ -9,26 +9,31 @@ function initMap() {
     zoom: 5
   });
 
-map.addListener('click', function(event) {
-  marker = new google.maps.Marker({position: event.latLng, map: map});
-  markerLat = marker.position.lat();
-  markerLon = marker.position.lng();
-  getConcerts(markerLat, markerLon);
-});
-}
-function getConcerts(thisLat, thisLon){
-  $.get('http://api.bandsintown.com/events/search?location=' + thisLat + ',' + thisLon + '&radius=10&format=json&app_id=EpicodusStudentProject', function(info){
-    $("#bandName").append('<p>'+info[0].artists[0].name + '</p>');
-    console.log(info[0].artists[0].name);
-    console.log(info);
+  map.addListener('click', function(event) {
+    marker = new google.maps.Marker({position: event.latLng, map: map});
+    markerLat = marker.position.lat();
+    markerLon = marker.position.lng();
+    getConcerts(markerLat, markerLon);
+    $('#bandName').text('');
   });
 }
 
+function getConcerts(thisLat, thisLon){
+  $.get('http://api.bandsintown.com/events/search?location=' + thisLat + ',' + thisLon + '&radius=10&format=json&app_id=EpicodusStudentProject',
+
+ function(info){
+   if (info[0]) {
+     for(var i=0; i<info.length; i++)
+       $("#bandName").append('<p>'+info[i].artists[0].name +'</p>');
+   } else {
+     $('#bandName').text('Sorry, no bands are playin in this area.');
+     }
+  });
+}
 
 $(document).ready(function(){
    $.get('https://maps.googleapis.com/maps/api/js?key='+ apiKey + '&callback=initMap',
    function(newMap){
      $("#map").show(initMap());
    });
-
 });
