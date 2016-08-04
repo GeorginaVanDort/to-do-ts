@@ -17,6 +17,9 @@ header {
 }
 
 #musicEvents {
+  h2 {
+    color: $gold;
+  }
   #venue p:nth-child(odd), #date p:nth-child(odd), #ticket_status p:nth-child(odd) {
     color: $gold;
   }

@@ -34,7 +34,7 @@ function initMap() {
 }
 
 function getConcerts(thisLat, thisLon){
-  $.get('http://api.bandsintown.com/events/search?location=' + thisLat + ',' + thisLon + '&radius=10&format=json&app_id=EpicodusStudentProject',
+  $.get('http://api.bandsintown.com/events/search?location=' + thisLat + ',' + thisLon + '&radius=50&format=json&app_id=EpicodusStudentProject&',
 
  function(info){
    if (info[0]) {
@@ -47,7 +47,12 @@ function getConcerts(thisLat, thisLon){
       $('#ticket_link').append("<a href='" + info[i].ticket_url + "' target="+'_blank'+"><i class='fa fa-ticket fa-1x' aria-hidden='true'></i></a>");
        console.log(info);
    } else {
-     $('#bandName').text('Sorry, no bands are playin in this area.');
+     $('#bandName').text('Sorry, no bands are playin in this area.'),
+     $('#venue').text(''),
+     $('#city').text(''),
+     $('#date').text(''),
+     $('#ticket_status').text(''),
+     $('#ticket_link').text('');
      }
   });
 }
