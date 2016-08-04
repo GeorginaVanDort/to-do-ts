@@ -1,0 +1,36 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  height: 15rem;
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#map-section {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  #map {
+    height: 50rem;
+    width: 90vw;
+  }
+}
+
+
+#musicEvents {
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+}
+
+a{
+  display: block;
+}

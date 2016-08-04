@@ -4,7 +4,6 @@ var apiKey = "AIzaSyDTxxSTai-Jb7jEh6w4_euhPozoiFTh89M";
 },{}],2:[function(require,module,exports){
 var apiKey = require("./../.env").apiKey;
 
-
 var map;
 function initMap() {
   var myLatLng = {lat: 37.0902, lng: -95.7129};
@@ -36,7 +35,7 @@ function getConcerts(thisLat, thisLon){
        $('#venue').append('<p>' + info[i].venue.name + '</p>'),
        $('#date').append('<p>' + info[i].datetime + '</p>'),
        $('#ticket_status').append('<p>' + info[i].ticket_status + '</p>'),
-       $('#ticket_link').append("<a href='" + info[i].ticket_url + "'>Buy Tickets</a>");
+       $('#ticket_link').append("<p><a href='" + info[i].ticket_url + "'><button>Buy Tickets</button></a><p>");
        console.log(info);
    } else {
      $('#bandName').text('Sorry, no bands are playin in this area.');

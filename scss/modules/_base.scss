@@ -1,0 +1,14 @@
+body {
+  background-color: black;
+  color: lightblue;
+}
+
+#bandName p:nth-child(odd), #venue p:nth-child(odd), #date p:nth-child(odd), #ticket_status p:nth-child(odd) {
+  background-color: yellow;
+}
+
+#ticket_link p:nth-child(odd) {
+  a button {
+    background-color: yellow;
+  }
+}
