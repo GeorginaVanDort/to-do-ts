@@ -15,7 +15,10 @@ function initMap() {
     markerLon = marker.position.lng();
     getConcerts(markerLat, markerLon);
     $('#bandName').text(''),
-    $('#venue').text('');
+    $('#venue').text(''),
+    $('#date').text(''),
+    $('#ticket_status').text(''),
+    $('#ticket_link').text('');
   });
 }
 
@@ -26,7 +29,10 @@ function getConcerts(thisLat, thisLon){
    if (info[0]) {
      for(var i=0; i<info.length; i++)
        $("#bandName").append('<p>'+info[i].artists[0].name +'</p>'),
-       $('#venue').append('<p>' + info[i].venue.name + '</p>');
+       $('#venue').append('<p>' + info[i].venue.name + '</p>'),
+       $('#date').append('<p>' + info[i].datetime + '</p>'),
+       $('#ticket_status').append('<p>' + info[i].ticket_status + '</p>'),
+       $('#ticket_link').append("<a href='" + info[i].ticket_url + "'>Buy Tickets</a>");
        console.log(info);
    } else {
      $('#bandName').text('Sorry, no bands are playin in this area.');
