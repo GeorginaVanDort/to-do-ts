@@ -7,7 +7,12 @@ html, body {
   height: 60vh;
 }
 
-#bandName {
+#musicEvents {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
 }
+
+// #bandName {
+//   display: flex;
+//   flex-direction: column;
+// }
