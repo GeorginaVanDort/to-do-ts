@@ -1,42 +1,4 @@
-body {
-  background-color: $almostBlack;
-  color: $lightGrey;
-  a {
-    color: $lightGrey;
-  }
-  a:hover {
-    color: $lightGrey;
-  }
-}
-
-header {
-  background-color: $gold;
-  h1 {
-    @include font-stack(6rem, $almostBlack, 'Orbitron');
-  }
-}
-
-#musicEvents {
-  h2 {
-    color: $gold;
-  }
-  #venue p:nth-child(odd), #date p:nth-child(odd), #ticket_status p:nth-child(odd) {
-    color: $gold;
-  }
-  #ticket_link p:nth-child(odd), #bandName p:nth-child(odd) {
-    a {
-      color: $gold;
-    }
-  }
-  #ticket_link a:nth-child(odd) {
-    i {
-      color: $gold;
-    }
-  }
-  #ticket_link a {
-    height: 3rem;
-  }
-  #bandName, #venue, #city, #date, #ticket_status {
-    background-color: $almostBlack;
-  }
-}
+// body {
+//   background-color: $almostBlack;
+//   color: white;
+// }
