@@ -1,0 +1,9 @@
+button {
+  background-color: #f1f1f1;
+  color: #333333;
+  border-radius: 3px;
+  border: 1px solid #d5d5d5;
+  &:hover {
+    background-color: darken(#f1f1f1, 5%);
+  }
+}
