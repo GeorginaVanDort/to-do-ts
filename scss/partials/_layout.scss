@@ -1,59 +1,8 @@
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-header {
-  height: 15rem;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#map-section {
-  height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  #map {
-    height: 50rem;
-    width: 90vw;
-  }
-}
-
-#musicEvents {
+#repos {
   display: flex;
   justify-content: space-between;
-  width: 105rem;
-  white-space: nowrap;
-}
-
-a{
-  display: block;
-}
-
-#bandName {
-  width: 17rem;
-}
-
-#venue {
-  width: 20rem;
-}
-
-#city {
-  max-width: 9rem;
-}
-
-#date {
-  width: 14rem;
-}
-
-#ticket_status {
-  width: 10rem;
-}
-
-#ticket_link {
-  width: 0rem;
+  article {
+    background-color: red;
+    width: 50rem;
+  }
 }

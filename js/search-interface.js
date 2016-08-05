@@ -10,10 +10,5 @@ $(document).ready(function(){
 
 
 
-
-// $("#nextPage").attr("href", 'https://api.github.com/users/' + userName + '/repos&page=2?access_token=' + apiKey);
-
-
-
   });
 });
