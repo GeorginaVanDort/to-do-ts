@@ -3,7 +3,10 @@ var apiKey = require('./../.env').apiKey;
 exports.getRepos = function(userName){
   $.get('https://api.github.com/users/' + userName + '/repos?access_token=' + apiKey).then(function(info){
 
-    $('#profileInfo').append("<img src='"+info[1].owner.avatar_url+"'/>");
+    $('#profileInfo').text('');
+    $('#profileInfo').append("<img src='"+info[0].owner.avatar_url+"'/><p>"
+    +info[0].owner.login+"</p><a href='https://github.com/"
+    +info[0].owner.login+"'>View on GitHub</a>");
 
     function UserRepo(repoName, repoDescription, repoLink) {
       this.name = repoName;
@@ -11,6 +14,7 @@ exports.getRepos = function(userName){
       this.repoLink = repoLink;
     }
 
+    $('#repos').text('');
     var profile = [];
     for (var i=0; i<info.length; i++){
       var repo = new UserRepo(info[i].name, info[i].description, info[i].html_url);
@@ -26,7 +30,3 @@ exports.getRepos = function(userName){
 
 // exports.getRepos = function(userName, textStatus, xhr)
 // header
-
-// info[i].owner.avatar_url
-// info[i].owner.login
-// url
