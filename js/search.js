@@ -24,7 +24,6 @@ exports.getRepos = function(userName){
       $('#repos'+[i]).append('<p>'+ profile[i].descrip +'</p>');
     }
 
-
   });
 };
 

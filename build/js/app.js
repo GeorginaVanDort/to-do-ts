@@ -28,7 +28,6 @@ exports.getRepos = function(userName){
       $('#repos'+[i]).append('<p>'+ profile[i].descrip +'</p>');
     }
 
-
   });
 };
 
@@ -37,8 +36,6 @@ exports.getRepos = function(userName){
 
 },{"./../.env":1}],3:[function(require,module,exports){
 var getRepos = require('./../js/search.js').getRepos;
-var apiKey = require('./../.env').apiKey;
-
 
 $(document).ready(function(){
   $('#user-lookup').submit(function(event){
@@ -48,9 +45,7 @@ $(document).ready(function(){
     getRepos(userName);
     $('#repos').css("visibility", "visible");
 
-
-
   });
 });
 
-},{"./../.env":1,"./../js/search.js":2}]},{},[3]);
+},{"./../js/search.js":2}]},{},[3]);
