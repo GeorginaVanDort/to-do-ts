@@ -91,9 +91,14 @@ gulp.task('serve', function() {
       index: "index.html"
     }
   })
+  gulp.watch(['*.html'], ['htmlBuild']);
   gulp.watch(["scss/**/*"], ['cssBuild']);
   gulp.watch(['js/*.js'], ['jsBuild']);
   gulp.watch(['bower.json'], ['bowerBuild']);
+});
+
+gulp.task('htmlBuild', function() {
+  browserSync.reload();
 });
 
 gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
