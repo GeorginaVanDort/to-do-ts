@@ -4,9 +4,7 @@ exports.getRepos = function(userName){
   $.get('https://api.github.com/users/' + userName + '/repos?access_token=' + apiKey).then(function(info){
 
     $('#profileInfo').text('');
-    $('#profileInfo').append("<img src='"+info[0].owner.avatar_url+"'/><p>"
-    +info[0].owner.login+"</p><a href='https://github.com/"
-    +info[0].owner.login+"'>View on GitHub</a>");
+    $('#profileInfo').append("<img src='"+info[0].owner.avatar_url+"'/><p>"+info[0].owner.login+"</p><a href='https://github.com/"+info[0].owner.login+"'>View on GitHub</a>");
 
     function UserRepo(repoName, repoDescription, repoLink) {
       this.name = repoName;
