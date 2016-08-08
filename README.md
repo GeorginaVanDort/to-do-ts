@@ -1,7 +1,7 @@
-# GitHub User Repository Lookup
+# Task-List
 #### DESCRIPTION
 
-This repository allows a user to search github profiles and view repositories.
+
 
 ##### Licence
 
